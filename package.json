@@ -1,0 +1,35 @@
+{
+  "name": "paw-scrypt-dynamic-value",
+  "version": "1.0.0",
+  "description": "Hash passwords using Scrypt",
+  "scripts": {
+    "main": "src/ScryptDynamicValue.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chillbrodev/Paw-ScryptDynamicValue.git"
+  },
+  "author": "Jon Holtan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chillbrodev/Paw-ScryptDynamicValue/issues"
+  },
+  "homepage": "https://github.com/chillbrodev/Paw-ScryptDynamicValue#readme",
+  "devDependencies": {
+    "babel-core": "^6.13.1",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-decorators": "^6.13.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.13.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-preset-stage-1": "^6.13.0",
+    "babel-preset-stage-2": "^6.13.0",
+    "babel-preset-stage-3": "^6.11.0",
+    "babel-register": "^6.11.6",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "scrypt-async": "^2.0.1"
+  }
+}
