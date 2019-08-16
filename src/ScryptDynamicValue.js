@@ -2,27 +2,27 @@ import Scrypt from 'scrypt-async';
 
 class ScryptDynamicValue {
   evaluate(context) {
-    if(this.input && this.salt && this.iteration && this.block && this.parallel && this.keyLength){
-      var isDone = false
-      var key = ""
-      Scrypt(this.input, this.salt, {
-        N: this.iteration,
-        r: this.block,
-        p: this.parallel,
-        dkLen: this.keyLength,
-        encoding: this.encoding
-      }, function(derivedKey) {
-          console.log(derivedKey); 
-          key = derivedKey
-          isDone = true
-      });
-
-      while(!isDone){}
-
-      return key
-    } else {
+    if(!(this.input && this.salt && this.iteration && this.block && this.parallel && this.keyLength)) {
       return "Missing Params"
     }
+
+    var isDone = false
+    var key = ""
+    Scrypt(this.input, this.salt, {
+      N: this.iteration,
+      r: this.block,
+      p: this.parallel,
+      dkLen: this.keyLength,
+      encoding: this.encoding
+    }, function(derivedKey) {
+        console.log(derivedKey);
+        key = derivedKey
+        isDone = true
+    });
+
+    while(!isDone){}
+
+    return key
   }
 }
 
