@@ -10,7 +10,7 @@ class ScryptDynamicValue {
         r: this.block,
         p: this.parallel,
         dkLen: this.keyLength,
-        encoding: 'base64'
+        encoding: this.encoding
       }, function(derivedKey) {
           console.log(derivedKey); 
           key = derivedKey
@@ -29,14 +29,23 @@ class ScryptDynamicValue {
 Object.assign(ScryptDynamicValue, {
   identifier: 'com.cbd.ScryptDynamicValue',
   title: 'Scrypt Password Hash',
-  help: '',
+  help: 'https://github.com/chillbrodev/PAW-ScryptDynamicValue',
   inputs: [
     InputField("input", "Input", "String"),
     InputField("salt", "Salt", "String"),
     InputField("iteration", "Iteration Cost", "String"),
     InputField("block", "Block Size", "String"),
     InputField("parallel", "Parallel Factor", "String"),
-    InputField("keyLength", "Key Length", "String")
+    InputField("keyLength", "Key Length", "String"),
+    InputField("encoding", "Encoding", 'Select', {
+      choices: {
+        'hex': 'Hex',
+        'base64': 'Base64',
+        'binary': 'Binary',
+        'undefined': 'Byte Array',
+      },
+      persisted: true,
+    }),
   ],
 });
 
