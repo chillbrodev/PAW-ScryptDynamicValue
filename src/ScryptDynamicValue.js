@@ -6,7 +6,6 @@ class ScryptDynamicValue {
       return "Missing Params"
     }
 
-    var done = false
     var key = ""
     Scrypt(this.input, this.salt, {
       N: this.iteration,
@@ -17,10 +16,7 @@ class ScryptDynamicValue {
     }, function(derivedKey) {
         console.log(derivedKey);
         key = derivedKey
-        done = true
     });
-
-    while(!done){}
 
     return key
   }
